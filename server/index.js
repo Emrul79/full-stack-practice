@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const path = require("path");
 const PORT = 3001;
 
 app.use(
@@ -13,6 +14,9 @@ app.get("/", (req, res) => {
     name: "Bangledesh",
     description: "land of emotions",
   });
+});
+app.get("/featured", (req, res) => {
+  res.sendFile(__dirname+'/index.html')
 });
 app.get("/about", (req, res) => {
   res.json({
